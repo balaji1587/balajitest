@@ -10,11 +10,11 @@ permissions:
 	group: ec2-user
 	mode: 444
 	type:
-	 - file
+	  - file
 hooks:
-	BeforeInstall:
-		- location: Scripts/beforeinstall.sh
-		  timeout:180
-    AfterInstall:
-		- location: Scripts/afterinstall.sh
-		  timeout:180
+  BeforeInstall:
+    - location: Scripts/beforeinstall.sh
+      timeout:180
+  AfterInstall:
+	- location: Scripts/afterinstall.sh
+	  timeout:180
