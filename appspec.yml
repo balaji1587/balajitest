@@ -3,3 +3,18 @@ os: linux
 files:
   - source: /index.html
     destination: /usr/share/nginx/html/
+permissions:
+  - object: /usr/share/nginx/html/
+    pattern: "index.html"
+	owner: ec2-user
+	group: ec2-user
+	mode: 444
+	type:
+	 - file
+hooks:
+	BeforeInstall:
+		- location: Scripts/beforeinstall.sh
+		  timeout:180
+    AfterInstall:
+		- location: Scripts/afterinstall.sh
+		  timeout:180
